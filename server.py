@@ -6,8 +6,6 @@ app = Flask(__name__, static_folder='client/build/static/', template_folder='cli
 app.config['WATSON_KEY'] = os.getenv('WATSON_KEY')
 app.config['WATSON_URL'] = os.getenv('WATSON_URL')
 
-WATSON_KEY = os.getenv('WATSON_KEY')
-
 
 @app.route('/english-to-french', methods=['GET'])
 def translate_en_to_fr():

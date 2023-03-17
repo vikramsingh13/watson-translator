@@ -18,6 +18,7 @@ def english_to_french(text):
     """
     Translate English text to French
     """
+    print('french')
     response = translator.translate(
         text=text,
         source='en',

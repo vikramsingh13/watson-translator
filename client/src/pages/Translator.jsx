@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { en_to_fr, fr_to_en } from "../api/translate";
 
 const Translator = () => {
@@ -6,14 +6,24 @@ const Translator = () => {
     const [french, setFrench] = useState("");
 
     const enTranslation = async() => {
-        let text = await fr_to_en(english);
+        let text = await fr_to_en(french);
         setEnglish(text);
-    }
+        console.log('recieved: ' + text)
+    };
 
     const frTranslation = async() => {
-        let text = await en_to_fr(french);
+        let text = await en_to_fr(english);
         setFrench(text);
-    }
+        console.log('recieved: ' + text)
+    };
+
+    const handleChangeEnglish = (e) => {
+        setEnglish(e.target.value);
+    };
+
+    const handleChangeFrench = (e) => {
+        setFrench(e.target.value);
+    };
 
     return (
         <div>
@@ -21,11 +31,11 @@ const Translator = () => {
             <div>
                 <div>
                     <h3>English</h3>
-                    <textarea value={english} onChange={(e) => setEnglish(e.target.text)}/>
+                    <textarea value={english} onChange={handleChangeEnglish} />
                 </div>
                 <div>
                     <h3>French</h3>
-                    <textarea value={french} onChange={(e) => setFrench(e.target.text)}/>
+                    <textarea value={french} onChange={handleChangeFrench} />
                 </div>
             </div>
             <div>
