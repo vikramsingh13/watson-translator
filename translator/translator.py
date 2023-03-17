@@ -13,9 +13,10 @@ translator = LanguageTranslatorV3(
 
 translator.set_service_url(url)
 
+
 def english_to_french(text):
     """
-    Translate English text to French using the Watson Language Translator service
+    Translate English text to French
     """
     response = translator.translate(
         text=text,
@@ -29,7 +30,7 @@ def english_to_french(text):
 
 def french_to_english(text):
     """
-    Translate French text to English using the Watson Language Translator service
+    Translate French text to English
     """
     response = translator.translate(
         text=text,
