@@ -5,6 +5,8 @@ from translator.translator import english_to_french, french_to_english
 app = Flask(__name__, static_folder='client/build/static/', template_folder='client/build/')
 app.config['WATSON_KEY'] = os.getenv('WATSON_KEY')
 app.config['WATSON_URL'] = os.getenv('WATSON_URL')
+os.environ['WATSON_KEY'] = os.getenv('WATSON_KEY')
+os.environ['WATSON_URL'] = os.getenv('WATSON_URL')
 
 
 @app.route('/english-to-french', methods=['GET'])

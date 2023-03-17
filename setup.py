@@ -6,7 +6,10 @@ setup(
     packages=find_packages(),
     install_requires=[
         'ibm-watson',
-        'ibm-cloud-sdk-core'
+        'ibm-cloud-sdk-core',
     ],
-    test_suite="tests"
+    tests_require=[
+        'unittest',
+    ],
+    test_suite='translator.tests',
 )

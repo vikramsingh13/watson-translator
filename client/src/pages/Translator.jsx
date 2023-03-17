@@ -8,13 +8,11 @@ const Translator = () => {
     const enTranslation = async() => {
         let text = await fr_to_en(french);
         setEnglish(text);
-        console.log('recieved: ' + text)
     };
 
     const frTranslation = async() => {
         let text = await en_to_fr(english);
         setFrench(text);
-        console.log('recieved: ' + text)
     };
 
     const handleChangeEnglish = (e) => {
