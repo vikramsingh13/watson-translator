@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, jsonify, request
 from translator.translator import english_to_french, french_to_english
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build/static/', template_folder='client/build/')
 app.config['WATSON_KEY'] = os.getenv('WATSON_KEY')
 app.config['WATSON_URL'] = os.getenv('WATSON_URL')
 
@@ -29,5 +29,5 @@ def translate_fr_to_en():
 
 @app.route('/')
 def index():
-    return f'Hello, {WATSON_KEY}'
+    return render_template('index.html')
 
